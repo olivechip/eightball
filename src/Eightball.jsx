@@ -1,17 +1,17 @@
 import {useState} from "react";
 
-const Eightball = (answers) => {
-    const randomNum = () => Math.floor(Math.random()*answers.answers.length);
-    const getMsg = answers.answers[randomNum()].msg;
-    const getColor = answers.answers[randomNum()].color;
+const Eightball = ({answers}) => {
+    const randomNum = () => Math.floor(Math.random()*answers.length);
+    const getMsg = answers[randomNum()].msg;
+    const getColor = answers[randomNum()].color;
 
     // Color Functions
     const colorCount = () => {
-        if (getColor == "green"){
+        if (getColor === "green"){
             setGreenCount(greenCount+1);
-        } else if (getColor == "goldenrod"){
+        } else if (getColor === "goldenrod"){
             setGoldenrodCount(goldenrodCount+1);
-        } else if (getColor == "red"){
+        } else if (getColor === "red"){
             setRedCount(redCount+1);
         }
     }
